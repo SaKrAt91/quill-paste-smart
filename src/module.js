@@ -96,7 +96,7 @@ class QuillPasteSmart extends Clipboard {
             }
             reader.readAsDataURL(image)
         } else {
-            delta = delta.insert(content);
+            delta = delta.concat(this.convert(content))
         }
 
         this.quill.updateContents(delta, Quill.sources.USER);
